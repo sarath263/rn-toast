@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Toast from "./Toast";
 
 // create a component
-const showToast = (toastMessage, duration = 3000, status = true) => {
+const showToast = (toastMessage, duration = 5000, status = true) => {
   return (
     <Toast toastVisible={status} text={toastMessage} duration={duration} />
   );
