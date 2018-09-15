@@ -6,10 +6,12 @@ import {
   Text,
   Platform,
   Keyboard,
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from "react-native";
 import PropTypes from "prop-types";
-
+const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
 class Toast extends Component {
   constructor(props) {
     super(props);
@@ -19,30 +21,6 @@ class Toast extends Component {
       keyboardOpen: false
     };
   }
-
-  componentDidMount() {
-    this.keyboardDidShowListener = Keyboard.addListener(
-      "keyboardDidShow",
-      this._keyboardDidShow
-    );
-    this.keyboardDidHideListener = Keyboard.addListener(
-      "keyboardDidHide",
-      this._keyboardDidHide
-    );
-  }
-
-  componentWillUnmount() {
-    this.keyboardDidShowListener.remove();
-    this.keyboardDidHideListener.remove();
-  }
-
-  _keyboardDidShow = () => {
-    this.setState({ keyboardOpen: true });
-  };
-
-  _keyboardDidHide = () => {
-    this.setState({ keyboardOpen: false });
-  };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.toastVisible) {
@@ -68,11 +46,7 @@ class Toast extends Component {
           style={[
             {
               opacity: this.state.fadeIn,
-              bottom: this.state.keyboardOpen
-                ? Platform.OS === "ios"
-                  ? 300
-                  : 80
-                : 80
+              top: 80
             },
             this.props.containerStyle
           ]}
@@ -95,6 +69,9 @@ export default Toast;
 
 const styles = StyleSheet.create({
   toastContainer: {
+    height: deviceHeight,
+    width: deviceWidth,
+    position: "absolute",
     justifyContent: "center",
     alignItems: "center"
   },
