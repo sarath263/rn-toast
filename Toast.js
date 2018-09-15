@@ -122,7 +122,7 @@ Toast.propTypes = {
   containerStyle: PropTypes.any,
   toastOpacity: PropTypes.any,
   text: PropTypes.string,
-  textStyle: PropTypes.number,
+  textStyle: PropTypes.any,
   toastVisible: PropTypes.bool,
   duration: PropTypes.number
 };
