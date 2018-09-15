@@ -63,7 +63,7 @@ class Toast extends Component {
   };
 
   renderToast() {
-    if (this.state.enabled && this.props.toastVisible) {
+    if (this.state.enabled && this.props.toastVisible && this.props.text) {
       return (
         <Animated.View
           style={[
