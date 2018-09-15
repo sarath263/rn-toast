@@ -112,8 +112,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 15,
     alignSelf: "stretch",
-    textAlign: "center",
-    fontFamily: "lato-regular"
+    textAlign: "center"
   }
 });
 
