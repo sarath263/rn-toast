@@ -51,16 +51,16 @@ class Toast extends Component {
     }
   }
 
-  fadeOut() {
+  fadeOut = () => {
     this.state.fadeIn.setValue(1);
     Animated.timing(this.state.fadeIn, {
       toValue: 0,
-      duration: 3000,
+      duration: this.props.duration,
       useNativeDriver: true
     }).start(() => {
       this.setState({ enabled: false });
     });
-  }
+  };
 
   renderToast() {
     if (this.state.enabled && this.props.toastVisible) {
@@ -123,10 +123,12 @@ Toast.propTypes = {
   toastOpacity: PropTypes.any,
   text: PropTypes.string,
   textStyle: PropTypes.number,
-  toastVisible: PropTypes.bool
+  toastVisible: PropTypes.bool,
+  duration: PropTypes.number
 };
 Toast.defaultProps = {
   containerStyle: styles.toastAnimatedView,
   textStyle: styles.toastText,
-  toastVisible: false
+  toastVisible: false,
+  duration: 3000
 };
