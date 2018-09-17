@@ -60,7 +60,11 @@ class Toast extends Component {
   }
 
   render() {
-    return <View style={styles.toastContainer}>{this.renderToast()}</View>;
+    return (
+      <View style={styles.toastContainer} pointerEvents="none">
+        {this.renderToast()}
+      </View>
+    );
   }
 }
 
