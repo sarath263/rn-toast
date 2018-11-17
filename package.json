@@ -1,11 +1,15 @@
 {
-  "name": "rn-toast",
-  "version": "0.0.1",
+  "name": "React Native Fixed Toast",
+  "author": "Sarath <sarath@pazata.com> (https://github.com/sarath263)",
   "description": "A simple dynamic and unique toast for react native.",
   "main": "./index.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarath-mohan-xelp/rn-toast.git"
   },
   "dependencies": {
     "prop-types": "^15.6.2"
