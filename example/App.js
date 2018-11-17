@@ -19,24 +19,27 @@ export default class App extends Component<Props> {
       text: ""
     };
   }
-  UNSAFE_componentDidMount() {
-    // This is the main implementaion.. you can call showtoast wherever you want.
-    this.setState({ toast: showToast("A Toasting to toast.", 10000) });
-  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text
           onPress={() =>
-            this.setState({ toast: showToast("A Toasting to toast.", 10000) })
+            // You can bind showtoast result to state and toast will appear.
+            // The state variable must be rendered in the outer container(Say a View).
+            // Params
+            //  first:Message for Toast (string)
+            //  second:Duration to show toast(number), Optional
+            this.setState({
+              toast: showToast("A Toasting for the toast.", 10000)
+            })
           }
           style={styles.instructions}
         >
-          To get started, edit App.js
+          Click Me.. !
         </Text>
         {this.state.toast}
-        {"Don't forget the above line."}
+        {/*"Don't forget the above line."*/}
       </View>
     );
   }

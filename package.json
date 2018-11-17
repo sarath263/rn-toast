@@ -12,6 +12,17 @@
     "type": "git",
     "url": "https://github.com/sarath-mohan-xelp/rn-toast.git"
   },
+  "keywords": [
+    "react-native",
+    "toast",
+    "android",
+    "ios",
+    "react native toast",
+    "native",
+    "toast module",
+    "android toast",
+    "ios toast"
+  ],
   "dependencies": {
     "prop-types": "^15.6.2"
   },
@@ -28,6 +39,6 @@
   "jest": {
     "preset": "react-native"
   },
-  "author": "",
+  "author": "sarath263",
   "license": "ISC"
 }
