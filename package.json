@@ -1,6 +1,6 @@
 {
   "name": "rn-fixed-toast",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "author": "Sarath <sarath@pazata.com> (https://github.com/sarath263)",
   "description": "A simple dynamic and unique toast for react native.",
   "main": "./index.js",
@@ -21,7 +21,9 @@
     "native",
     "toast module",
     "android toast",
-    "ios toast"
+    "ios toast",
+    "simple",
+    "no boilerplate code"
   ],
   "dependencies": {
     "prop-types": "^15.6.2"
