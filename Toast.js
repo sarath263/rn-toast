@@ -22,7 +22,7 @@ class Toast extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.toastVisible) {
       this.setState({ enabled: true }, this.fadeOut(nextProps.duration));
     }

@@ -1,9 +1,8 @@
 {
-  "name": "rn-fixed-toast",
-  "version": "0.1.1",
+  "name": "dc",
   "author": "Sarath <sarath@pazata.com> (https://github.com/sarath263)",
-  "description": "A simple dynamic and unique toast for react native.",
-  "main": "./index.js",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
@@ -13,11 +12,10 @@
     "url": "https://github.com/sarath-mohan-xelp/rn-toast.git"
   },
   "dependencies": {
-    "prop-types": "^15.6.2"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "module": "^1.2.5",
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "rn-fixed-toast": "0.0.2"
   },
   "devDependencies": {
     "babel-jest": "23.4.2",
@@ -27,7 +25,5 @@
   },
   "jest": {
     "preset": "react-native"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
