@@ -35,3 +35,5 @@ And in component render method ..
           </View>
         );
       }
+
+See example folder for full implementation.
