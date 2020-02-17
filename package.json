@@ -1,6 +1,6 @@
 {
   "name": "rn-fixed-toast",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "author": "Sarath <sarath@pazata.com> (https://github.com/sarath263)",
   "description": "A simple dynamic and unique toast for react native.",
   "main": "./index.js",
