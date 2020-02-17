@@ -22,21 +22,29 @@ class Toast extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (isNaN(nextProps.duration)) {
+      nextProps.duration = 3000;
+    }
     if (nextProps.toastVisible) {
-      this.setState({ enabled: true }, this.fadeOut(nextProps.duration));
+      this.setState({ enabled: true }, () => {
+        this.fadeOut(parseInt(nextProps.duration));
+      });
     }
   }
 
-  fadeOut = duration => {
+  fadeOut = async duration => {
     this.state.fadeIn.setValue(1);
-    Animated.timing(this.state.fadeIn, {
-      toValue: 0,
-      duration: duration,
-      useNativeDriver: true
-    }).start(() => {
-      this.setState({ enabled: false });
-    });
+    setTimeout(()=>{
+      Animated.timing(this.state.fadeIn, {
+        toValue: 0,
+        duration: duration,
+        useNativeDriver: true
+      }).start(() => {
+        this.setState({ enabled: false });
+      });
+    }), 100);
+    
   };
 
   renderToast() {
@@ -80,9 +88,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   toastAnimatedView: {
-    marginHorizontal: 30,
-    paddingHorizontal: 25,
-    paddingVertical: 15,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     borderRadius: 25,
     backgroundColor: "#2d2d2d",
     position: "absolute",
